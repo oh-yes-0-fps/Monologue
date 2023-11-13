@@ -1,0 +1,18 @@
+package monologue;
+
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class TypeNames {
+    public static final String[] TYPE_NAMES_ARR = new String[] {
+        {%for t in types%}
+        "{{t.java.ValueType}}",
+        "{{t.java.WrapValueType}}",
+        {%endfor%}
+        {%for t in geomTypes%}
+        "{{t.TypeName}}",
+        {%endfor%}
+    };
+
+    public static final HashSet<String> TYPE_NAMES_SET = new HashSet<String>(Arrays.asList(TYPE_NAMES_ARR));
+}
